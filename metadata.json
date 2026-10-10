@@ -1,0 +1,6 @@
+{
+  "name": "SOCH WALE — سوچ والے",
+  "description": "Better Thinking. Better Life. Premium Urdu educational publishing platform, courses, video lectures, and learning guides.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

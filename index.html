@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      /* Compatibility shim: make window.fetch assignable for testing extensions and runners */
+      (function () {
+        try {
+          var _currFetch = window.fetch ? window.fetch.bind(window) : undefined;
+          Object.defineProperty(window, 'fetch', {
+            configurable: true,
+            enumerable: true,
+            get: function () {
+              return _currFetch;
+            },
+            set: function (newFetch) {
+              _currFetch = newFetch;
+            },
+          });
+        } catch (_) {}
+
+        /* Suppress uncaught extension-injected errors */
+        window.addEventListener(
+          'error',
+          function (e) {
+            if (
+              (e.filename && e.filename.indexOf('chrome-extension://') !== -1) ||
+              (e.message && e.message.indexOf('Cannot set property fetch') !== -1)
+            ) {
+              if (typeof e.stopImmediatePropagation === 'function') {
+                e.stopImmediatePropagation();
+              }
+              if (typeof e.preventDefault === 'function') {
+                e.preventDefault();
+              }
+              return true;
+            }
+          },
+          true
+        );
+      })();
+    </script>
+    <title>SOCH WALE — سوچ والے | Better Thinking. Better Life.</title>
+    <meta name="description" content="Better Thinking. Better Life. Premium Urdu educational publishing platform, courses, video lectures, and learning guides for parenting, relationships, emotional intelligence, and wellbeing." />
+    
+    <!-- OpenGraph Metadata -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Soch Wale — سوچ والے" />
+    <meta property="og:title" content="SOCH WALE — سوچ والے | Better Thinking. Better Life." />
+    <meta property="og:description" content="Accessible, evidence-informed Urdu educational publishing and digital learning platform covering parenting, emotional intelligence, sex education, relationships, and health." />
+    <meta property="og:url" content="https://www.sochwale.com" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SOCH WALE — سوچ والے | Better Thinking. Better Life." />
+    <meta name="twitter:description" content="Urdu educational courses, articles, video lectures, and downloadable guides for thoughtful living." />
+    
+    <!-- Urdu Fonts: Jameel Noori Nastaleeq + Plus Jakarta Sans + Noto Nastaliq fallback -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.cdnfonts.com/css/jameel-noori-nastaleeq" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon: Official SW Monogram -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%230A0A0A' stroke='%23FFFFFF' stroke-width='3'/%3E%3Ccircle cx='50' cy='50' r='44' fill='%230A0A0A'/%3E%3Ctext x='50' y='64' font-family='Georgia, serif' font-size='44' font-weight='bold' fill='%23FFFFFF' text-anchor='middle'%3ESW%3C/text%3E%3C/svg%3E" />
+    
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "SOCH WALE",
+      "alternateName": "سوچ والے",
+      "url": "https://www.sochwale.com",
+      "logo": "https://www.sochwale.com/logo.png",
+      "description": "Evidence-informed Urdu educational publishing platform, courses, video lectures, and learning guides.",
+      "sameAs": [
+        "https://www.instagram.com/sochwale.official/",
+        "https://www.facebook.com/profile.php?id=61594587364213",
+        "https://www.youtube.com/@SochWale"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+92-303-2226181",
+        "contactType": "Customer Support",
+        "availableLanguage": ["Urdu", "English"]
+      }
+    }
+    </script>
+  </head>
+  <body class="bg-[#F7F4EE] text-[#161616] antialiased selection:bg-[#B89A5A] selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

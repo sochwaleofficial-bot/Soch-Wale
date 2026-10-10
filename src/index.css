@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/* Jameel Noori Nastaleeq Local & Web Font */
+@font-face {
+  font-family: 'Jameel Noori Nastaleeq';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Jameel Noori Nastaleeq'),
+       url('/fonts/JameelNooriNastaleeq.woff') format('woff'),
+       url('https://fonts.cdnfonts.com/s/149204/JameelNooriNastaleeqRegular.woff') format('woff');
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --sw-black: #0A0A0A;
+    --sw-charcoal: #181818;
+    --sw-ivory: #F7F4EE;
+    --sw-text: #161616;
+    --sw-gray: #77736C;
+    --sw-gold: #B89A5A;
+    --sw-gold-hover: #967B43;
+    --sw-border: #E5E1D9;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #F7F4EE;
+    color: #161616;
+    overflow-x: hidden;
+  }
+}
+
+/* Authentic Jameel Noori Nastaleeq for all Urdu text */
+.font-urdu {
+  font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Urdu Typesetting', Tahoma, sans-serif;
+  direction: rtl;
+  text-align: right;
+  line-height: 2.3;
+  letter-spacing: 0;
+}
+
+.font-urdu-inline {
+  font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', Tahoma, sans-serif;
+  direction: rtl;
+}
+
+/* Nastaleeq headline styling with comfortable leading */
+.font-urdu-heading {
+  font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', Tahoma, sans-serif;
+  direction: rtl;
+  text-align: right;
+  line-height: 2.0;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F4EE;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4CEBF;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B89A5A;
+}
